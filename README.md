@@ -6,7 +6,7 @@ A brief description of what your project does and the value it provides.
 - Usage
 - Dataset
 - Methodology
-  - [Preprocessing](#preprocessing)
+  - [Data Preprocessing](#data-preprocessing)
   - Feature Selection
   - Data Splitting
   - Model Training
@@ -27,7 +27,7 @@ Information about the dataset you used, how to download it, and how it's structu
 
 ## Methodology
 
-### Preprocessing
+### Data Preprocessing
 First, to know if there are any outliers, a box plot was plotted for all of the features, almost all of them had outliers, so we used min_max clipping, we calculated the min as `min = Q1 - 1.5(Q3 - Q1)` and the max as `max = Q3 + 1.5(Q3 - Q1)`, then
 
 ### Feature Selection
