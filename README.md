@@ -3,19 +3,16 @@
 A brief description of what your project does and the value it provides.
 
 ## Table of Contents
-- Usage
-- Dataset
-- Methodology
+- [Dataset](#dataset)
+- [Methodology](#methodology)
   - [Data Preprocessing](#data-preprocessing)
-  - Feature Selection
-  - Data Splitting
-  - Model Training
-  - Cross-Validation
-  - Performance Evaluation
-- Results
-- Contributing
-- License
-
+  - [Feature Selection](#feature-selection)
+  - [Data Splitting](#data-splitting)
+  - [Model Training](#model-training)
+  - [Cross Validation](#cross-validation)
+  - [Performance Evaluation](#performance-evaluation)
+- [Results](#results)
+  
 ## Dataset
 The dataset used is the [Diagnostic Wisconsin Breast Cancer Dataset](https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic), it contains 30 features holding information about geometry and texture of the cells, 
 
@@ -52,17 +49,20 @@ here are some screenshots of the box plots before and after the clipping:<br>
 ![Screenshot from 2024-01-28 14-12-14](https://github.com/AbdullahAhmed30/Breast-Cancer-Detection/assets/101139791/41a83307-da4c-4db0-9e02-2a5f863b9af6)
 ![Screenshot from 2024-01-28 14-12-31](https://github.com/AbdullahAhmed30/Breast-Cancer-Detection/assets/101139791/08b0e65a-ea92-40af-b0ff-cee7c98aa346)
 
+The data was then normalized with a standard deviation of 1 and mean 0, to prevent data with larger values to skew the results in the expense of the features with the smaller values
 
 ### Feature Selection
+In order to select the most significant features that will yeild the best perfomance, we calculated the spearman correlation coefficient between the features and the lables and removed any feature that yeilded a score below 0.5, then plotting the matrix gave the following 
 
+![WhatsApp Image 2023-12-30 at 1 52 21 AM](https://github.com/AbdullahAhmed30/Breast-Cancer-Detection/assets/101139791/0f6e7dab-0bc0-44cc-8f42-0cdeba37a1ba)
 
 ### Data Splitting
-Discuss why you split your data into a 7:3 train-test ratio. Explain if you used any specific strategies like stratified splitting.
+The data was split with ratio of train to test 7:3, the same dataset was used before and split with ration 8:2 and we needed to experiment more, we used stratified random sampling to make sure the train data is represents the original dataset as much as possible
 
 ### Model Training
 For each model (Random Forest, Logistic Regression, K-Nearest Neighbors, XGBoost, and SVM), explain why you chose it, how it works, and any specific parameters you tuned.
 
-### Cross-Validation
+### Cross Validation
 Explain why you used K-Fold cross-validation with k=5, how it helps in model validation, and what the results were.
 
 ### Performance Evaluation
